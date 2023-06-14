@@ -35,7 +35,7 @@ input:focus {
   align-items: center;
 }
 .container {
-  border: solid rgb(219 219 219) 1px;
+  border: solid rgb(219 219 219) 2px;
   overflow: hidden;
   border-radius: 30px;
 }

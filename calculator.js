@@ -3,20 +3,21 @@ Below code handles the
 input using buttons
 --------------------*/
 
-/* APPROACH: As we want to evalute first two expressions(10*8+6) given in string and replace them by result(80+6).
-So we use stack approach.
+/* Goal: we want after entering two operands and one operator the result is calculated for further action
 --------------------*/
 
 const btns = document.querySelectorAll("button");
 const input = document.querySelector("input");
+
+// "pres" hold if there is already operator in the String.
+// "first_no" holds if already number exists or No (for + , -)
 
 let pres = false;
 let first_no = false;
 let number = "";
 let res;
 
-/* Below we add eventlistener and on evey button press update "number" variable. When any operand is added(*,-) 
-we push number into "arr" and reset number
+/* check if operator is present than evaluate the expressin or vice versa.
 --------------------*/
 btns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -70,10 +71,6 @@ btns.forEach((btn) => {
       case 17:
         number = "";
         break;
-
-      /* TASK: on pressing "=" button first exp is evaluated.
- Approach: get first three array elements evaluate them and push result again in array.
---------------------*/
       case 99:
         evaluate();
         break;
