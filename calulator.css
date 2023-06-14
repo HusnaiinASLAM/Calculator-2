@@ -1,0 +1,148 @@
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Dark {
+  background-color: var(--dark);
+}
+:root {
+  --dark: rgb(22, 32, 42);
+  --temp: rgb(24, 33, 42);
+  --night--main: rgb(79 96 112);
+  --night--input: rgb(54, 71, 79);
+  --white--input: rgb(237, 237, 237);
+  --white--main: rgb(227, 227, 227);
+}
+input:focus {
+  outline: none;
+}
+#form {
+  overflow: auto;
+}
+#icon {
+  height: 40px;
+  position: fixed;
+  right: 0;
+  margin: 30px;
+}
+.calculator {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  border: solid rgb(219 219 219) 1px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+.body {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  height: 276px;
+  background-color: var(--white--main);
+}
+.equal {
+  grid-column: 4/5;
+  grid-row: 2/6;
+}
+.input {
+  height: 173px;
+  width: 213px;
+  border: none;
+  font-size: 32px;
+}
+.cross {
+  padding-top: 13px;
+}
+.div {
+  padding-top: 7px;
+}
+button {
+  border: none;
+  box-shadow: 10px;
+  background-color: rgb(227, 227, 227);
+  font-size: 20px;
+}
+.equal {
+  background-color: rgb(255, 101, 49);
+}
+.input-night {
+  background-color: var(--night--input);
+}
+.body-night {
+  background-color: var(--night--main);
+}
+.body-night button {
+  background-color: var(--night--main);
+  color: white;
+}
+.body-night .equal {
+  background-color: rgb(255, 101, 49);
+}
+.input-night {
+  color: white;
+}
+
+/***************************************
+ Now calculator for desktop starts here 
+ ***************************************/
+
+@media screen and (min-width: 768px) {
+  .input {
+    height: 50px;
+    width: 217px;
+  }
+  .container {
+    border-radius: 0;
+  }
+  .input {
+    margin-bottom: 10px;
+    width: 98%;
+    border: rgb(118, 113, 113) solid 1px;
+    border: solid rgb(219 219 219) 1px;
+  }
+  .container {
+    padding: 28px;
+  }
+  .body {
+    background-color: white;
+    height: 292px;
+  }
+  .w {
+    width: 98px;
+    height: 50px;
+  }
+  button {
+    background-color: rgb(249, 249, 249);
+  }
+  .char {
+    background-color: rgb(221, 221, 221);
+  }
+
+  /* nn */
+  .input-night {
+    background-color: var(--dark);
+  }
+  .body-night {
+    background-color: var(--dark);
+  }
+  .body .body-night button {
+    background-color: var(--night--main);
+    color: white;
+  }
+  .body-night .equal {
+    background-color: rgb(255, 101, 49);
+  }
+  .body-night .char {
+    background-color: rgb(33, 50, 67);
+  }
+  .input-night {
+    color: white;
+  }
+}
