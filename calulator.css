@@ -57,6 +57,10 @@ input:focus {
   border: none;
   font-size: 32px;
 }
+.char,
+.w {
+  margin: 4px;
+}
 .cross {
   padding-top: 13px;
 }
@@ -69,8 +73,19 @@ button {
   background-color: rgb(227, 227, 227);
   font-size: 20px;
 }
+.w:hover {
+  border-radius: 50%;
+}
+button:hover {
+  cursor: pointer;
+  background-color: rgb(87 84 84);
+  color: white;
+}
 .equal {
   background-color: rgb(255, 101, 49);
+}
+.equal:hover {
+  background-color: rgb(188 50 3);
 }
 .input-night {
   background-color: var(--night--input);
@@ -82,8 +97,15 @@ button {
   background-color: var(--night--main);
   color: white;
 }
+.body-night button:hover {
+  background-color: rgb(235 239 243);
+  color: black;
+}
 .body-night .equal {
   background-color: rgb(255, 101, 49);
+}
+.body-night .equal:hover {
+  background-color: rgb(188 50 3);
 }
 .input-night {
   color: white;
@@ -117,12 +139,14 @@ button {
   .w {
     width: 98px;
     height: 50px;
+    margin: 0;
   }
   button {
     background-color: rgb(249, 249, 249);
   }
   .char {
     background-color: rgb(221, 221, 221);
+    margin: 0;
   }
 
   /* nn */
@@ -144,5 +168,8 @@ button {
   }
   .input-night {
     color: white;
+  }
+  .w:hover {
+    border-radius: 0%;
   }
 }

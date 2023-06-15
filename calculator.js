@@ -9,11 +9,8 @@ input using buttons
 const btns = document.querySelectorAll("button");
 const input = document.querySelector("input");
 
-// "pres" hold if there is already operator in the String.
-// "first_no" holds if already number exists or No (for + , -)
-
-let pres = false;
-let first_no = false;
+let operator_exists = false;
+let can_eval = false;
 let number = "";
 let res;
 
@@ -25,45 +22,48 @@ btns.forEach((btn) => {
 
     switch (inp) {
       case 11:
-        if (pres && first_no) {
+        if (operator_exists && can_eval) {
           if (evaluate()) {
             break;
           }
-          !pres;
+          !operator_exists;
         }
         number = number + "+";
-        pres = true;
+        operator_exists = true;
+        can_eval = false;
         break;
       case 12:
-        if (pres && first_no) {
+        if (operator_exists && can_eval) {
           if (evaluate()) {
             break;
           }
-          !pres;
+          !operator_exists;
         }
         number = number + "-";
-        pres = true;
+        operator_exists = true;
+        can_eval = false;
         break;
       case 13:
-        if (pres) {
+        if (operator_exists) {
           if (evaluate()) {
             break;
           }
-          !pres;
+          !operator_exists;
         }
         number = number + "*";
-        pres = true;
+        operator_exists = true;
+        can_eval = false;
         break;
       case 14:
-        if (pres) {
+        if (operator_exists) {
           if (evaluate()) {
             break;
           }
-          !pres;
+          !operator_exists;
         }
         number = number + "/";
-        pres = true;
-
+        operator_exists = true;
+        can_eval = false;
         break;
       case 16:
         number = number + ".";
@@ -76,7 +76,7 @@ btns.forEach((btn) => {
         break;
 
       default:
-        first_no = true;
+        can_eval = true;
         number = number + inp;
     }
     function evaluate() {
